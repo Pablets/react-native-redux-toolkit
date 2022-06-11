@@ -1,10 +1,10 @@
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { PressableProps, Text, TouchableOpacity, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { colors } from '../../../styles/colors'
 import { bookshelfButtonStyles } from './style'
 
-interface BookshelfButtonProps {
+interface BookshelfButtonProps extends PressableProps {
   title?: string;
   type?: ButtonKind;
 }
@@ -24,7 +24,7 @@ const Primary = ( { title } :BookshelfButtonProps) => {
           </Text>
         </TouchableOpacity>
       </LinearGradient>
-    </> 
+    </>
   )
 }
 
@@ -44,7 +44,7 @@ const Secondary = ({ title } :BookshelfButtonProps) => {
           </Text>
         </TouchableOpacity>
       </LinearGradient>
-    </> 
+    </>
   )
 }
 
@@ -63,5 +63,5 @@ export const BookshelfButton = ( bookshelfButtonProps: BookshelfButtonProps) => 
     <>
       { renderButton(bookshelfButtonProps) }
     </>
-  ) 
+  )
 }
